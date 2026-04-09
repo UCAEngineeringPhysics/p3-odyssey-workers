@@ -7,8 +7,8 @@ from launch.substitutions import LaunchConfiguration
 
 
 def generate_launch_description():
-    homerun_package_path = get_package_share_path("homer_navigation")
-    slam_config_path = homerun_package_path / "configs/mapping_params.yaml"
+    homerun_package_path = get_package_share_path("coffee_car")
+    slam_config_path = homerun_package_path / "config/mapping_params.yaml"
     rviz_config_path = homerun_package_path / "rviz/mapping.rviz"
 
     sim_time_arg = DeclareLaunchArgument(

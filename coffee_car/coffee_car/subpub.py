@@ -65,7 +65,7 @@ class subscriber(Node):
         lidar = TransformStamped()
         lidar.header.stamp=self.get_clock().now().to_msg()
         lidar.header.frame_id = "base_link"
-        lidar.child_frame_id = "laser"
+        lidar.child_frame_id = "lidar_link"
         lidar.transform.translation.x = 0.0
         lidar.transform.translation.y = 0.0
         lidar.transform.translation.z = 0.2

@@ -46,7 +46,7 @@ def generate_launch_description():
             parameters=[{
                 "publish_tf": False,
                 "publish_odom": "/laser_odom",
-                "laser_frame": "laser",
+                "laser_frame": "lidar_link",
                 "max_iterations": 10,
                 'use_sim_time': LaunchConfiguration('use_sim_time'),
             }]
