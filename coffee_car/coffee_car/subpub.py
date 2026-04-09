@@ -124,7 +124,7 @@ class subscriber(Node):
         
         # 2. Linear Acceleration
         lin_accel_cov = [0.0] * 9
-        lin_accel_cov[0] = 0.1  # X 
+        lin_accel_cov[0] = 0.01  # X 
         lin_accel_cov[4] = 0.01  # Y 
         lin_accel_cov[8] = 0.01  # Z 
         msg.linear_acceleration_covariance = lin_accel_cov
