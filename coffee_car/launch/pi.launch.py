@@ -13,9 +13,6 @@ def generate_launch_description():
     # 2. Build the exact path to your ekf.yaml file
     ekf_config_path = os.path.join(coffee_car_share_dir, 'config', 'ekf.yaml')
 
-    # 3. Get the path to the rplidar_ros launch file
-    rplidar_share_dir = get_package_share_directory('rplidar_ros')
-    rplidar_launch_file = os.path.join(rplidar_share_dir, 'launch', 'rplidar.launch.py') #from rplidar.launch.py
 
     sim_time_arg = DeclareLaunchArgument(
         name="use_sim_time",
@@ -33,9 +30,19 @@ def generate_launch_description():
             name='subpub_node'
         ),
         
-        # CORRECT WAY to include another launch file
-        IncludeLaunchDescription(
-            PythonLaunchDescriptionSource(rplidar_launch_file)
+       Node(
+            name='rplidar_composition',
+            package='rplidar_ros',
+            executable='rplidar_composition',
+            output='screen',
+            parameters=[{
+                'serial_port': '/dev/ttyUSB0',
+                'serial_baudrate': 115200,  # A1 / A2
+                # 'serial_baudrate': 256000, # A3
+                'frame_id': 'lidar_link',
+                'inverted': False,
+                'angle_compensate': True,
+            }],
         ),
         
         # Laser Scan Matcher Node
