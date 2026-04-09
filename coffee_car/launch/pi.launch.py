@@ -11,7 +11,7 @@ def generate_launch_description():
     coffee_car_share_dir = get_package_share_directory('coffee_car')
     
     # 2. Build the exact path to your ekf.yaml file
-    ekf_config_path = os.path.join(coffee_car_share_dir, 'config', 'ekf.yaml')
+    ekf_config_path = os.path.join(coffee_car_share_dir, 'config', 'ekf_no_laser.yaml')
 
 
     sim_time_arg = DeclareLaunchArgument(
