@@ -51,12 +51,18 @@ def generate_launch_description():
             executable="laser_scan_matcher",
             name="laser_scan_matcher_node",
             parameters=[{
+                'use_imu' : True,
+                'use_odom' : True,
                 "publish_tf": False,
+                'kf_dist_linear': 0.10,
+                'kf_dist_angular': 0.17,
                 "publish_odom": "/laser_odom",
                 "laser_frame": "lidar_link",
                 "max_iterations": 10,
                 'use_sim_time': LaunchConfiguration('use_sim_time'),
-            }]
+            }],
+            remappings=[('/odom', '/odom_pub'), ('/imu/data', '/imu_pub')]
+
         ),
         
         # EKF Node passing the absolute path to the YAML file
