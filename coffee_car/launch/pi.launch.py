@@ -27,7 +27,8 @@ def generate_launch_description():
         Node(
             package='coffee_car',
             executable='subpub',
-            name='subpub_node'
+            name='subpub_node',
+            parameters=[{'use_sim_time': LaunchConfiguration('use_sim_time')}]
         ),
         
        Node(
@@ -42,6 +43,7 @@ def generate_launch_description():
                 'frame_id': 'lidar_link',
                 'inverted': False,
                 'angle_compensate': True,
+                'use_sim_time': LaunchConfiguration('use_sim_time'),
             }],
         ),
         

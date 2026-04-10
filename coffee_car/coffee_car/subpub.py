@@ -82,8 +82,8 @@ class subscriber(Node):
             )  # actual linear and angular vel
             if len(data) == 8:
                 try:
-                    self.lin_vel = float(data[0])
-                    self.ang_vel = float(data[1])
+                    self.lin_vel = -float(data[0])
+                    self.ang_vel = -float(data[1])
                     self.x_accel = float(data[2])
                     self.y_accel = float(data[3])
                     self.z_accel = float(data[4])
@@ -106,8 +106,8 @@ class subscriber(Node):
             f"Measured velocity\nlinear: {self.lin_vel}, angular: {self.ang_vel}")
 
     def set_target_vel(self, msg):
-        self.targ_lin_vel = msg.linear.x
-        self.targ_ang_vel = msg.angular.z
+        self.targ_lin_vel = -msg.linear.x
+        self.targ_ang_vel = -msg.angular.z
         self.pico_msngr.write(f"{self.targ_lin_vel},{self.targ_ang_vel}\n".encode("utf-8"))
         self.get_logger().debug(
             f"Set HomeR's target velocity\nlinear: {self.targ_lin_vel}, angular: {self.targ_ang_vel}"
