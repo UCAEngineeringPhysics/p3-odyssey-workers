@@ -71,8 +71,8 @@ class subscriber(Node):
         lidar.transform.translation.z = 0.2
         lidar.transform.rotation.x = 0.0
         lidar.transform.rotation.y = 0.0
-        lidar.transform.rotation.z = 0.0
-        lidar.transform.rotation.w = 1.0
+        lidar.transform.rotation.z = 1.0
+        lidar.transform.rotation.w = 0.0
         self.broadcaster.sendTransform(lidar)
         
     def listen_pico_msg(self):
@@ -82,8 +82,8 @@ class subscriber(Node):
             )  # actual linear and angular vel
             if len(data) == 8:
                 try:
-                    self.lin_vel = -float(data[0])
-                    self.ang_vel = -float(data[1])
+                    self.lin_vel = float(data[0])
+                    self.ang_vel = float(data[1])
                     self.x_accel = float(data[2])
                     self.y_accel = float(data[3])
                     self.z_accel = float(data[4])
