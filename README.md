@@ -60,21 +60,21 @@ The coffee car has to run a few launch systems prior to running itself
 ### Mechanical Design
 
 Base Design:
-![Homer_Portrait](drawings/mechanical/Homer_base_design.png)
+![Homer_Portrait](images/Homer_base_design.png)
 Roof Design:
-![Homer_Portrait](drawings/mechanical/Homer_Roof.png)
+![Homer_Portrait](images/Homer_Roof.png)
 Motor Holder Design:
-![Homer_Portrait](drawings/mechanical/Motor_Holder.png)
+![Homer_Portrait](images/Motor_Holder.png)
 Caster Wheel Design:
-![Homer_Portrait](drawings/mechanical/Caster_Wheel.png)
+![Homer_Portrait](images/Caster_Wheel.png)
 Pi 5 Case (Space Ship):
-![Homer_Portrait](drawings/mechanical/Pi5SPACESHIP.png)
+![Homer_Portrait](images/Pi5SPACESHIP.png)
 Raspberry Pi 5:
-![Raspberry Pi 5](drawings/electrical/RaspberryPi5.png)
+![Raspberry Pi 5](images/RaspberryPi5.png)
 Motors (with Encoders):
-![Motors](drawings/mechanical/Motors.png)
+![Motors](images/Motors.png)
 Wheels:
-![Wheels](drawings/mechanical/65mm_wheel.png)
+![Wheels](images/65mm_wheel.png)
 
 ## Electrical Designs
 ![Homer_Portrait](drawings/electrical/Homer_Electrical.png)
