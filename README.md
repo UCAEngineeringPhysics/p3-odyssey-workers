@@ -6,21 +6,51 @@
 We chose to build a trailer style holder for the coffee cup, it sits like a trailer with a similar hitch that trailers use so that it can turn with the robot, not by its wheels but by the connection at the fron of the trailer.
 
 
+
+
 ### Hardware Installation Guide
+
+1. Mobile Base
+    The bottom plate of the robot is the base, which are driven by DC motors and a caster wheel, which we have positioned at the back. 
+2. Brain, the Pi 5
+    The Raspberry Pi 5 is stacked in the middle of the robot underneath the motor driver board and the PCB where the Pico 2 W is. 
+3. RP Lidar
+    The robot uses Lidar to 'see'. It sits on the very top of the robot, and it connected to one of the USB ports on the Pi 5
 
 ## Software Usage Instructions
 
-Ros2 Jazzy
+Workspace for Pi 5 set up
 ```
-src /ros/jazzy/setup.bash
+mkdir -p ~/homer_ws/src
+cd ~/homer_ws/src
+
+source /opt/ros/jazzy/setup.bash
 cd ~/homer_ws
-colcon build coffee_car
-source install/setup.bash
-```
-Then launch:
 ```
 
+### Usage
+1. Hardware
+    Rp Lidar and Pico node (subpub) 
+    ```
+    ros2 launch coffee_car hardware.launch.py
+    ```
+2. Mapping
+    starts slam-toolbox, drives robot around the room, generates map
+    ```
+    ros2 launch coffee_car mapping.launch.py
+    ```
+3. Navigation
+    After the map is made, this is used to deliver the coffee
+    ```
+    ros2 launch coffee_car navigation.launch.py
+    ``` 
+
+We can also manually steer the robot and drive it using
 ```
+ros2 run teleop_twist_keyboard teleop_twist_keyboard
+```
+
+
 The coffee car has to run a few launch systems prior to running itself
     1. The hardware, so RP Lidar and the pico can connect
     2. The mapping, this is where we can run the robot manually to build a map, or it can move by itself 
