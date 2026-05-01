@@ -6,17 +6,19 @@
 We chose to build a trailer style holder for the coffee cup, it sits like a trailer with a similar hitch that trailers use so that it can turn with the robot, not by its wheels but by the connection at the fron of the trailer.
 
 For the drawings, they're all named drawing, sorry bro.
-meow
+
+
+Trailer Mount-Mount?
 ![Wheels](images/Drawing1.png)
-meow
+Wheel-Rim
 ![Wheels](images/Drawin2.png)
-meow
+Wheel-Tire
 ![Wheels](images/Drawing3.png)
-meow
+Coffe Cup trailer/chariot 
 ![Wheels](images/Drawing4.png)
-meow
+On trailer trailer mount
 ![Wheels](images/Drawing5.png)
-meow
+On Robot trailer mount
 ![Wheels](images/Drawing6.png)
 
 
