@@ -116,4 +116,4 @@ Wheels:
 ![Wheels](images/65mm_wheel.png)
 
 ## Electrical Designs
-![Homer_Portrait](drawings/electrical/Homer_Electrical.png)
+![Homer_Portrait](images/Homer_Electrical.png)
