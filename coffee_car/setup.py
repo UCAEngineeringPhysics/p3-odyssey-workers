@@ -29,8 +29,8 @@ setup(
     zip_safe=True,
     maintainer='worker',
     maintainer_email='phillips85502@gmail.com',
-    description='TODO: Package description',
-    license='TODO: License declaration',
+    description='Autonomous coffee delivery robot',
+    license='MIT',
     extras_require={
         'test': [
             'pytest',
