@@ -1,0 +1,9 @@
+joystick_dev: /dev/input/js0
+axis_linear: 1
+scale_linear: 0.5
+axis_angular: 0
+scale_angular: 1.0
+enable_button: 0
+turbo_button: 1
+deadzone: 0.1
+use_sim_time: false

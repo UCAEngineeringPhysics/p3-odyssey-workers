@@ -10,12 +10,12 @@ slam_toolbox:
     # ROS Parameters
     odom_frame: odom
     map_frame: map
-    base_frame: base_link
+    base_frame: base_footprint
     scan_topic: /scan
     mode: localization  # mapping
 
     # if you'd like to start localizing on bringup in a map and pose
-    map_file_name: /home/rosboss/proj3_ws/src/p3-odyssey-workers/first_map
+    map_file_name: /home/johnphillips/project3_ws/src/p3-odyssey-workers/big_map
     #map_start_pose: [5.0, 1.0, 0.0]
     map_start_at_dock: true
 

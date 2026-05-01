@@ -38,7 +38,7 @@ setup(
     },
     entry_points={
         'console_scripts': [
-            "subpub = coffee_car.subpub:main"
+            'pico_interface = coffee_car.pico_interface:main',
         ],
     },
 )
