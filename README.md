@@ -23,23 +23,48 @@ Workspace for Pi 5 set up
 ```
 mkdir -p ~/homer_ws/src
 cd ~/homer_ws/src
-
-source /opt/ros/jazzy/setup.bash
+git pull https://github.com/UCAEngineeringPhysics/p3-odyssey-workers
 cd ~/homer_ws
+sudo apt install python3-rosdep
+rosdep init
+rosdep update
+rosdep install --from-paths src --ignore-src -r -y
+colcon buid
+source install/setup.bash
+sudo apt install -y chrony
+echo 'export ROS_DOMAIN_ID=90'
+source ~/.bashrc
 ```
-
+Workspace for server set up
+```
+mkdir -p ~/homer_ws/src
+cd ~/homer_ws/src
+git pull https://github.com/UCAEngineeringPhysics/p3-odyssey-workers
+cd ~/homer_ws
+sudo apt install python3-rosdep
+rosdep init
+rosdep update
+rosdep install --from-paths src --ignore-src -r -y
+colcon buid
+source install/setup.bash
+sudo apt install chrony
+echo 'export ROS_DOMAIN_ID=90'
+source ~/.bashrc
+```
 ### Usage
 1. Hardware
-    Rp Lidar and Pico node (subpub) 
+    Rp Lidar and Pico communication packages (launch on pi)
     ```
-    ros2 launch coffee_car hardware.launch.py
+    ros2 launch coffee_car homer_launch.py
     ```
 2. Mapping
-    starts slam-toolbox, drives robot around the room, generates map
+    starts slam-toolbox, user drives robot around the room, generates map
     ```
-    ros2 launch coffee_car mapping.launch.py
+    ros2 launch coffee_car create_map.launch.py
     ```
-3. Navigation
+    Once map is made type in the path in which you want to save the file.
+    You then need to add that same path to the localization_params.yaml map flie name
+4. Navigation
     After the map is made, this is used to deliver the coffee
     ```
     ros2 launch coffee_car navigation.launch.py
