@@ -51,6 +51,13 @@ def generate_launch_description():
         arguments=['-d', LaunchConfiguration('rvizconfig')],
     )
 
+    action_node = Node(
+        package='coffee_car',
+        executable='action',
+        name='nav2_action_client',
+        output='screen',
+    )
+
     return LaunchDescription(
         [
             sim_time_arg,
@@ -58,5 +65,6 @@ def generate_launch_description():
             slam_toolbox_launch,
             rviz_node,
             nav2_launch,
+            action_node,
         ]
     )

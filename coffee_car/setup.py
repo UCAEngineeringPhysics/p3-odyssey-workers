@@ -39,6 +39,7 @@ setup(
     entry_points={
         'console_scripts': [
             'pico_interface = coffee_car.pico_interface:main',
+            'action = coffee_car.action:main',
         ],
     },
 )
